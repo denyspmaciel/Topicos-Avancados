@@ -8,7 +8,7 @@ IP_Public="$(curl http://169.254.169.254/latest/meta-data/public-ipv4)"
 
 sudo apt -y update
 
-sudo apt -y install php-curl php-gd php-mbstring php-xml php-xmlrpc php libapache2-mod-php apache2
+sudo apt -y install php-curl php-gd php-mbstring php-xml php-xmlrpc php libapache2-mod-php apache2 php-mysql
 
 #sudo apt -y install mysql-server php-mysql
 
