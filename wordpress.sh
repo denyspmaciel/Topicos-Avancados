@@ -41,7 +41,6 @@ sudo chown -R www-data:www-data /var/www/wordpress
 
 sudo cp /etc/apache2/sites-available/000-default.conf /etc/apache2/sites-available/wordpress.conf
 
-
 sudo sed -i '10s/^/        ServerName '$IP_Public'/' /etc/apache2/sites-available/wordpress.conf
 
 sudo sed -i '12s/html/wordpress/' /etc/apache2/sites-available/wordpress.conf
