@@ -8,20 +8,22 @@ IP_Public="$(curl http://169.254.169.254/latest/meta-data/public-ipv4)"
 
 sudo apt -y update
 
-sudo apt -y install php-curl php-gd php-mbstring php-xml php-xmlrpc php libapache2-mod-php php-mysql apache2 mysql-server
+sudo apt -y install php-curl php-gd php-mbstring php-xml php-xmlrpc php libapache2-mod-php apache2
+
+#sudo apt -y install mysql-server php-mysql
 
 #Criando o Banco de Dados do WordPress:
 
-sudo mysql<<EOF
+#sudo mysql<<EOF
 
-CREATE DATABASE wordpress;
+#CREATE DATABASE wordpress;
 
-CREATE USER 'wordpress'@'localhost' IDENTIFIED BY 'wordpress';
+#CREATE USER 'wordpress'@'localhost' IDENTIFIED BY 'wordpress';
 
-GRANT ALL ON wordpress.* TO 'wordpress'@'localhost';
+#GRANT ALL ON wordpress.* TO 'wordpress'@'localhost';
 
-FLUSH PRIVILEGES;
-EOF
+#FLUSH PRIVILEGES;
+#EOF
 
 # Baixando e Configurando o WordPress:
 
