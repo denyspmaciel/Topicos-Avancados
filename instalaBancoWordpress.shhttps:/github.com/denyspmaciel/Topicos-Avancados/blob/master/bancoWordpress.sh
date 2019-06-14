@@ -1,7 +1,7 @@
 #!/bin/bash
 
-apt-get update
-sudo apt -y install mysql-server \n",
+apt -y update
+sudo apt -y install mysql-server
 
 sudo mysql <<EOF
 CREATE DATABASE wordpress;
