@@ -59,9 +59,6 @@ sudo sed -i "s/username_here/wp_admin/g" /var/www/html/wordpress/wp-config.php
 sudo sed -i "s/password_here/root/g" /var/www/html/wordpress/wp-config.php
 sudo sed -i "s/localhost/$ip_banco/g" /var/www/html/wordpress/wp-config.php#!/bin/bash
 
-#Esse script necessecita do IP do banco de dados
-#O mesmo deve ser exportado com no IPBD
-ip_banco="${IPBD}"
 
 #INSTALA O O QUE É NECESSÁRIO
 sudo apt -y update
