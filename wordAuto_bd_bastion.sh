@@ -4,7 +4,7 @@
 #O mesmo deve ser exportado com no IPBD
 ip_banco="${IPBD}"
 usuario="${USER}"
-senha="{PASS}"
+senha="${PASS}"
 
 #INSTALA O O QUE É NECESSÁRIO
 sudo apt -y update
