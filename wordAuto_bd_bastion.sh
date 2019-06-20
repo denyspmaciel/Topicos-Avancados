@@ -3,6 +3,8 @@
 #Esse script necessecita do IP do banco de dados
 #O mesmo deve ser exportado com no IPBD
 ip_banco="${IPBD}"
+usuario="${USER}"
+senha="{PASS}"
 
 #INSTALA O O QUE É NECESSÁRIO
 sudo apt -y update
@@ -116,8 +118,8 @@ sudo sed -i "s/localhost/$ip_banco/g" /var/www/html/wordpress/wp-config.php
 
 sudo sed -i "s/\$language = ''/\$language = 'pt_BR'/" /var/www/html/wordpress/wp-admin/install.php
 sudo sed -i "359s/.*/\t\t\$weblog_title = 'Deninho';/" /var/www/html/wordpress/wp-admin/install.php
-sudo sed -i "360s/.*/\t\t\$user_name = $USER;/" /var/www/html/wordpress/wp-admin/install.php
-sudo sed -i "361s/.*/\t\t\$admin_password = $PASS;/" /var/www/html/wordpress/wp-admin/install.php
-sudo sed -i "362s/.*/\t\t\$admin_password_check = $PASS;/" /var/www/html/wordpress/wp-admin/install.php
+sudo sed -i "360s/.*/\t\t\$user_name = $usuario;/" /var/www/html/wordpress/wp-admin/install.php
+sudo sed -i "361s/.*/\t\t\$admin_password = $senha;/" /var/www/html/wordpress/wp-admin/install.php
+sudo sed -i "362s/.*/\t\t\$admin_password_check = $senha;/" /var/www/html/wordpress/wp-admin/install.php
 sudo sed -i "363s/.*/\t\t\$admin_email = 'admin@email.com';/" /var/www/html/wordpress/wp-admin/install.php
 sudo sed -i "364s/.*/\t\t\$public = 'blog_public';/" /var/www/html/wordpress/wp-admin/install.php
