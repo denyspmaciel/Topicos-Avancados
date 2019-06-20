@@ -114,10 +114,10 @@ sudo sed -i "s/username_here/wp_admin/g" /var/www/html/wordpress/wp-config.php
 sudo sed -i "s/password_here/root/g" /var/www/html/wordpress/wp-config.php
 sudo sed -i "s/localhost/$ip_banco/g" /var/www/html/wordpress/wp-config.php
 
-#sudo sed -i "s/\$language = ''/\$language = 'pt_BR'/" /var/www/html/wordpress/wp-admin/install.php
-#sudo sed -i "359s/.*/\t\t\$weblog_title = 'Deninho';/" /var/www/html/wordpress/wp-admin/install.php
-#sudo sed -i "360s/.*/\t\t\$user_name = 'wordpress';/" /var/www/html/wordpress/wp-admin/install.php
-#sudo sed -i "361s/.*/\t\t\$admin_password = 'wordpress';/" /var/www/html/wordpress/wp-admin/install.php
-#sudo sed -i "362s/.*/\t\t\$admin_password_check = 'wordpress';/" /var/www/html/wordpress/wp-admin/install.php
-#sudo sed -i "363s/.*/\t\t\$admin_email = 'admin@email.com';/" /var/www/html/wordpress/wp-admin/install.php
-#sudo sed -i "364s/.*/\t\t\$public = 'blog_public';/" /var/www/html/wordpress/wp-admin/install.php
+sudo sed -i "s/\$language = ''/\$language = 'pt_BR'/" /var/www/html/wordpress/wp-admin/install.php
+sudo sed -i "359s/.*/\t\t\$weblog_title = 'Deninho';/" /var/www/html/wordpress/wp-admin/install.php
+sudo sed -i "360s/.*/\t\t\$user_name = 'wordpress';/" /var/www/html/wordpress/wp-admin/install.php
+sudo sed -i "361s/.*/\t\t\$admin_password = 'wordpress';/" /var/www/html/wordpress/wp-admin/install.php
+sudo sed -i "362s/.*/\t\t\$admin_password_check = 'wordpress';/" /var/www/html/wordpress/wp-admin/install.php
+sudo sed -i "363s/.*/\t\t\$admin_email = 'admin@email.com';/" /var/www/html/wordpress/wp-admin/install.php
+sudo sed -i "364s/.*/\t\t\$public = 'blog_public';/" /var/www/html/wordpress/wp-admin/install.php
