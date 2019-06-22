@@ -119,8 +119,8 @@ sudo sed -i "s/\$language = ''/\$language = 'pt_BR'/" /var/www/html/wordpress/wp
 
 ## ALTERANDO A VARIÁVEL $STEP PARA PASSAR IR PARA A TELA DE LOGIN
 
-n=`grep -n '$step =' $arquivo | cut -f 1 -d :`
-sed -i ""$n"s/: 0;/: 2;/" /var/www/html/wordpress/wp-admin/install.php
+n=`grep -n '$step =' /var/www/html/wordpress/wp-admin/install.php | cut -f 1 -d :`
+sed ""$n"s/: 0;/: 2;/" /var/www/html/wordpress/wp-admin/install.php
 
 ## ALTERANDO AS CONFIGURAÇÕES DO USUÁRIOS DE ACORDO COM OS PARÂMETROS ESCOLHIDOS
 
