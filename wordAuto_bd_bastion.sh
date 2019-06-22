@@ -113,16 +113,16 @@ sudo sed -i "s/username_here/wp_admin/g" /var/www/html/wordpress/wp-config.php
 sudo sed -i "s/password_here/root/g" /var/www/html/wordpress/wp-config.php
 sudo sed -i "s/localhost/$ip_banco/g" /var/www/html/wordpress/wp-config.php
 
-## ALTERANDO A LINGUAGEM DO WORDPRESS PARA PORTUGUÊS BRASILEIRO
+## ALTERANDO A LINGUAGEM DO WORDPRESS PARA PORTUGUES BRASILEIRO
 
 sudo sed -i "s/\$language = ''/\$language = 'pt_BR'/" /var/www/html/wordpress/wp-admin/install.php
 
-## ALTERANDO A VARIÁVEL $STEP PARA PASSAR IR PARA A TELA DE LOGIN
+## ALTERANDO A VARIAVEL STEP PARA PASSAR IR PARA A TELA DE LOGIN
 
 n=`grep -n '$step =' /var/www/html/wordpress/wp-admin/install.php | cut -f 1 -d :`
 sed ""$n"s/: 0;/: 2;/" /var/www/html/wordpress/wp-admin/install.php
 
-## ALTERANDO AS CONFIGURAÇÕES DO USUÁRIOS DE ACORDO COM OS PARÂMETROS ESCOLHIDOS
+## ALTERANDO AS CONFIGURACOES DO USUÁRIOS DE ACORDO COM OS PARAMETROS ESCOLHIDOS
 
 aux=`grep -n '$weblog_title[[:blank:]]*=' /var/www/html/wordpress/wp-admin/install.php | cut -f 1 -d ":"`
 n=`echo $aux | cut -f 2 -d " "`
