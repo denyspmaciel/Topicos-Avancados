@@ -282,19 +282,19 @@
     	}
     },
 	"Outputs": {
-		"IpPublicoWeb": {
+		"EnderecoIPPublicoServidorWeb": {
 			"Value": {"Fn::GetAtt": ["ServidorWeb", "PublicIp"]},
 			"Description": "IP publico do servidor Web"
 		},
-		"IpPrivadoWeb": {
+		"EnderecoIPPrivadoServidorWeb": {
 			"Value": {"Fn::GetAtt": ["ServidorWeb", "PrivateIp"]},
 			"Description": "IP privado do servidor Web"
 		},
-		"IpPrivadoBD": {
+		"EnderecoIPPrivadoBancoDeDados": {
 			"Value": {"Fn::GetAtt": ["ServidorBD", "PrivateIp"]},
 			"Description": "IP privado do servidor de banco de dados"
 		},
-		"IpPublicoBastion": {
+		"EnderecoIPBastion": {
 			"Value": {"Fn::GetAtt": ["ServidorBastion", "PublicIp"]},
 			"Description": "IP publico do servidor Bastion"
 		}
