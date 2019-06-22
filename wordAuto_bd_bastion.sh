@@ -113,10 +113,31 @@ sudo sed -i "s/username_here/wp_admin/g" /var/www/html/wordpress/wp-config.php
 sudo sed -i "s/password_here/root/g" /var/www/html/wordpress/wp-config.php
 sudo sed -i "s/localhost/$ip_banco/g" /var/www/html/wordpress/wp-config.php
 
+## ALTERANDO A LINGUAGEM DO WORDPRESS PARA PORTUGUÊS BRASILEIRO
+
 sudo sed -i "s/\$language = ''/\$language = 'pt_BR'/" /var/www/html/wordpress/wp-admin/install.php
-sudo sed -i "359s/.*/\t\t\$weblog_title = 'Deninho';/" /var/www/html/wordpress/wp-admin/install.php
-sudo sed -i "360s/.*/\t\t\$user_name = $usuario;/" /var/www/html/wordpress/wp-admin/install.php
-sudo sed -i "361s/.*/\t\t\$admin_password = $senha;/" /var/www/html/wordpress/wp-admin/install.php
-sudo sed -i "362s/.*/\t\t\$admin_password_check = $senha;/" /var/www/html/wordpress/wp-admin/install.php
-sudo sed -i "363s/.*/\t\t\$admin_email = 'admin@email.com';/" /var/www/html/wordpress/wp-admin/install.php
-sudo sed -i "364s/.*/\t\t\$public = 'blog_public';/" /var/www/html/wordpress/wp-admin/install.php
+
+## ALTERANDO A VARIÁVEL $STEP PARA PASSAR IR PARA A TELA DE LOGIN
+
+n=`grep -n '$step =' $arquivo | cut -f 1 -d :`
+sed -i ""$n"s/: 0;/: 2;/" /var/www/html/wordpress/wp-admin/install.php
+
+## ALTERANDO AS CONFIGURAÇÕES DO USUÁRIOS DE ACORDO COM OS PARÂMETROS ESCOLHIDOS
+
+aux=`grep -n '$weblog_title[[:blank:]]*=' /var/www/html/wordpress/wp-admin/install.php | cut -f 1 -d ":"`
+n=`echo $aux | cut -f 2 -d " "`
+sed -i ""$n"s/: '';/: 'SiteDenys';/" /var/www/html/wordpress/wp-admin/install.php
+
+aux=`grep -n '$user_name[[:blank:]]*=' /var/www/html/wordpress/wp-admin/install.php | cut -f 1 -d ":"`
+n=`echo $aux | cut -f 2 -d " "`
+sed -i ""$n"s/: '';/: '"$usuario"';/" /var/www/html/wordpress/wp-admin/install.php
+
+n=`grep -n '$admin_password[[:blank:]]*=' /var/www/html/wordpress/wp-admin/install.php | cut -f 1 -d :`
+sed -i ""$n"s/: '';/: '"$senha"';/" /var/www/html/wordpress/wp-admin/install.php
+
+n=`grep -n '$admin_password_check[[:blank:]]*=' /var/www/html/wordpress/wp-admin/install.php | cut -f 1 -d :`
+sed -i ""$n"s/: '';/: '"$senha"';/" /var/www/html/wordpress/wp-admin/install.php
+
+aux=`grep -n '$admin_email[[:blank:]]*=' /var/www/html/wordpress/wp-admin/install.php | cut -f 1 -d ":"`
+n=`echo $aux | cut -f 2 -d " "`
+sed -i ""$n"s/: '';/: 'admin@email.com';/" /var/www/html/wordpress/wp-admin/install.php
