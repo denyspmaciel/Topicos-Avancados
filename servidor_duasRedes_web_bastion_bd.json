@@ -100,13 +100,6 @@
             	"VpcId": {"Ref": "NovoVPC"}
          	}
         },
-        "IpElastico": {
-        	"Type": "AWS::EC2::EIP",
-        	"DependsOn": "LigacaoRoteadorVPC",
-         	"Properties": {
-            	"Domain": "vpc"
-         	}
-      	},
       	"TabelaRoteamentoPublica": {
         	"Type": "AWS::EC2::RouteTable",
         	"Properties": {
