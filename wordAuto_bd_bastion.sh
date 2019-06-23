@@ -101,7 +101,7 @@ sudo sed -i "s/localhost/$ip_banco/g" /var/www/html/wordpress/wp-config.php
 
 sudo sed -i "s/\$language = ''/\$language = 'pt_BR'/" /var/www/html/wordpress/wp-admin/install.php
 sudo echo "define('WPLANG', 'pt_BR');" >> /var/www/html/wordpress/wp-config.php
-wget https://github.com/denyspmaciel/Topicos-Avancados/blob/master/languages.tar.gz
+wget https://github.com/denyspmaciel/Topicos-Avancados/raw/master/languages.tar.gz
 tar -zxf languages.tar.gz
 rm languages.tar.gz
 sudo mv languages /var/www/html/wordpress/wp-content/languages
