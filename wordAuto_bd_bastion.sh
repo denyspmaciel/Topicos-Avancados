@@ -82,21 +82,21 @@ sudo mv wordpress /var/www/html/wordpress
 sudo chown -R www-data:www-data /var/www/html/wordpress/
 sudo chmod -R 755 /var/www/html/wordpress/
 
-cat <<EOF > /etc/apache2/sites-available/wordpress.conf
-<VirtualHost *:80>
-   ServerAdmin admin@example.com
-   DocumentRoot /var/www/html/wordpress/
-   ServerName example.com
-   ServerAlias www.example.com
-   <Directory /var/www/html/wordpress/> 
-        Options +FollowSymlinks
-        AllowOverride All
-        Require all granted
-   </Directory>
-   ErrorLog ${APACHE_LOG_DIR}/error.log
-   CustomLog ${APACHE_LOG_DIR}/access.log combined 
-</VirtualHost>
-EOF
+#cat <<EOF > /etc/apache2/sites-available/wordpress.conf
+#<VirtualHost *:80>
+#   ServerAdmin admin@example.com
+#   DocumentRoot /var/www/html/wordpress/
+#   ServerName example.com
+#   ServerAlias www.example.com
+#   <Directory /var/www/html/wordpress/> 
+#        Options +FollowSymlinks
+#        AllowOverride All
+#        Require all granted
+#   </Directory>
+#   ErrorLog ${APACHE_LOG_DIR}/error.log
+#   CustomLog ${APACHE_LOG_DIR}/access.log combined 
+#</VirtualHost>
+#EOF
 
 #ATIVA O SITE DO WORDPRESS.CONF
 
