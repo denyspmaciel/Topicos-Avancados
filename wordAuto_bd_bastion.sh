@@ -100,10 +100,14 @@ sudo sed -i "s/localhost/$ip_banco/g" /var/www/html/wordpress/wp-config.php
 ## ALTERANDO A LINGUAGEM DO WORDPRESS PARA PORTUGUES BRASILEIRO
 
 sudo sed -i "s/\$language = ''/\$language = 'pt_BR'/" /var/www/html/wordpress/wp-admin/install.php
+sudo echo "define('WPLANG', 'pt_BR');" >> /var/www/html/wordpress/wp-config.php
+wget https://github.com/denyspmaciel/Topicos-Avancados/blob/master/languages.tar.gz
+tar -zxf languages.tar.gz
+rm languages.tar.gz
+sudo mv languages /var/www/html/wordpress/wp-content/languages
 
 ## ALTERANDO A VARIAVEL STEP PARA PASSAR IR PARA A TELA DE LOGIN
 
-#caminho=`echo /var/www/html/wordpress/wp-admin/install.php`
 n=`grep -n '$step =' /var/www/html/wordpress/wp-admin/install.php | cut -f 1 -d :`
 sed -i ""$n"s/: 0;/: 2;/" /var/www/html/wordpress/wp-admin/install.php
 
